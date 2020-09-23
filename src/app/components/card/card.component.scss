@@ -1,0 +1,148 @@
+
+// Flip Card
+.card-wrapper-flip {
+  height: 225px;
+  width: 300px;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+
+  .card-front, .card-back {
+    height: 225px;
+    width: 300px;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+  }
+
+  .card-front {
+
+    .card-image {
+      height: 100%;
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.card-back {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .card-text {  
+    .card-title {
+      text-align: center;
+    }
+  }
+
+  .card-subtitle {
+    text-align: center;
+  }
+
+  .card-button {
+    margin-bottom: 12px;
+  }
+}
+
+.card-text, .card-button {
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+  
+.card-button {
+  bottom: 0;
+  border: 2px solid #e31b6d;
+  font-size: 13pt;
+  font-weight: 500;
+  margin: 0 auto;
+  padding: 7px 0;
+  text-align: center;
+  width: 170px;
+}
+
+.card-button:hover {
+  background-color: #e31b6d;
+  cursor: pointer;
+  color: white;
+}
+
+// Normal Card
+// .card-wrapper {
+//   display: inline-flex;
+//   justify-content: center;
+//   position: relative;
+// }
+
+// .card-image {
+//   opacity: 1;
+//   height: 225px;
+//   width: 300px;
+//   transition: all 0.3s ease-in-out;
+
+//   img {
+//     width: 100%;
+//     height: auto;
+//   }
+// }
+
+// .card-text {
+//   top: 0;
+//   position: absolute;
+// }
+
+// .card-text, .card-button {
+//   opacity: 0;
+//   text-align: center;
+//   transition: all 0.3s ease-in-out;
+//   z-index: 2;
+// }
+
+// .card-title {
+//   text-align: center;
+// }
+
+// .card-subtitle {
+//   text-align: center;
+// }
+
+// .card-button {
+//   bottom: 0;
+//   border: 2px solid #e31b6d;
+//   font-size: 13pt;
+//   font-weight: 500;
+//   margin: 0 auto;
+//   padding: 7px 0;
+//   position: absolute;
+//   text-align: center;
+//   width: 170px;
+// }
+
+// .card-button:hover {
+//   background-color: #e31b6d;
+//   cursor: pointer;
+//   color: white;
+// }
+
+// :host:hover {
+
+//   .card-image {
+//     opacity: 0;
+//   }
+
+//   .card-text {
+//     opacity: 1;
+//     top: 20%;
+//   }
+
+//   .card-button {
+//     bottom: 25%;
+//     opacity: 1;
+//   }
+// }

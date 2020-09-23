@@ -1,0 +1,11 @@
+<div class="scroll-to-top" 
+  (click)="scrollToTop()"
+  [ngClass]="{'show-scrollTop': windowScrolled}" 
+  [ngStyle]="{
+    'bottom.px': bottomOffset,
+    'right.px': rightOffset
+    }"
+  >
+    <i class="icon-chevron-up" ></i>
+    <i class="icon-chevron-up" ></i>
+</div>

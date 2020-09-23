@@ -1,0 +1,10 @@
+<div #filterWrap class="filter-wrap text-secondary">
+  <div class="row align-items-center justify-content-center">
+    <div #filter class="filter" *ngFor="let filterName of filterNames" (click)="filterGallery($event)">{{filterName}}</div>
+  </div>
+  <div class="float-bar" [style.width.px]="activeWidth" [style.left.px]="activeLeft">
+    <div #floatRow class="float-row" [style.width.px]="filterWrapWidth" [style.left.px]="'-' + activeLeft">
+      <div class="filter" *ngFor="let filterName of filterNames">{{filterName}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+:host {
+  color: #616161;
+  width: auto;
+  height: auto;
+}
+
+.work-experience {
+  margin: 5px;
+  width: 100%;
+}
+
+.bars-wrap {
+  margin-top: 3em;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+    padding-left: 20px;
+  }
+  
+}

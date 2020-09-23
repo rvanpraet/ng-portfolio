@@ -1,0 +1,38 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="email_form">
+  <div class="fields">
+    <div class="field">
+      <input type="text" formControlName="subject" required id="suject" placeholder="Subject" />
+      <div *ngIf="contactForm.get('subject').invalid && (contactForm.get('subject').dirty || contactForm.get('subject').touched)">
+        <div *ngIf="contactForm.get('subject').errors.required" class="alert alert-info">
+          Please enter a subject
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <input type="text" formControlName="reply_to" required email id="email" placeholder="Your email" />
+      <div *ngIf="contactForm.get('reply_to').invalid && (contactForm.get('reply_to').dirty || contactForm.get('reply_to').touched)">
+        <div *ngIf="contactForm.get('reply_to').errors.required" class="alert alert-info">
+          Please enter an email address
+        </div>
+        <div *ngIf="contactForm.get('reply_to').errors.email" class="alert alert-danger">
+          The email you've entered is not valid
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <textarea #message formControlName="text" required minlength="20" placeholder="Your message"></textarea>
+      <div *ngIf="contactForm.get('text').invalid && (contactForm.get('text').dirty || contactForm.get('text').touched)">
+        <div *ngIf="contactForm.get('text').errors.required" class="alert alert-info">
+          Please enter a message
+        </div>
+        <div *ngIf="contactForm.get('text').errors.minlength" class="alert alert-info">
+          Your message should be at least 20 characters long
+        </div>
+    </div>
+    </div>
+  </div>
+  <div class="actions d-flex justify-content-end">
+    <input #send disabled type="submit" value="Send" class="primary"/>
+  </div>
+</form>
+<app-modal [content]="modalContent" [show]="openModal" [targetElem]="contactFormEl" (modalClose)="handleModalClose($event)"></app-modal>

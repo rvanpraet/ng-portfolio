@@ -1,0 +1,32 @@
+.timeline-container {
+  width: 100%;
+}
+
+.year-section{
+  color: #616161;
+
+  a{
+    font-weight: 700;
+    color: white;
+  }
+  .year{
+    color: #444964;
+    font-weight: 400;
+  }
+	.big{
+    font-size: larger;
+    color: #616161;
+    font-weight: 100;
+    margin-bottom: .5em;
+  }
+	.aside{
+    font-size: smaller;
+    border-left: 2px solid #04c2c9;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    font-weight: 300;
+	}
+  ul{
+    list-style: circle;
+  }
+}
