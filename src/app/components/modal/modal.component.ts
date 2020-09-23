@@ -76,7 +76,6 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy, OnChang
   //   if (!!this.modalDialog && this.show) {
   //     const clickedInside = this.modalDialog.nativeElement.contains(target);
   //     if (!clickedInside) {
-  //       console.log('clickie inside');
   //       this.closeDialog();
   //     }
   //   }
@@ -91,7 +90,6 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy, OnChang
       const content = modalEl.children[0].children.namedItem('modal-content');
       let animHeight;
       let animWidth;
-      console.log(image.children);
       if (image.children[0]) {
         if (window.innerWidth > 768) {
           animWidth = 666;
