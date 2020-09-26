@@ -1,7 +1,8 @@
-// import { Flip } from 'gsap/Flip.js';
+import { Flip } from 'gsap/Flip';
+import { Draggable } from 'gsap/Draggable';
 import { Injectable } from '@angular/core';
 import { gsap, Power2 } from 'gsap';
-// gsap.registerPlugin(Flip);
+gsap.registerPlugin(Flip);
 
 @Injectable({
   providedIn: 'root'
@@ -52,18 +53,8 @@ export class GsapService {
     return gsap.timeline(vars);
   }
 
-  public scaleHide(el, duration): void {
-    gsap.to(el, duration, {scale: 0, display: 'none', ease: Power2.easeInOut});
-  }
-
-  public scaleShow(el, duration, display): void {
-    gsap.to(el, duration, {scale: 1, display, ease: Power2.easeInOut});
-  }
-
-
   // Smoothen layout of a container with items
   public filterLayout(boxes, duration, display, filter, event?): void {
-
     // const options = {
     //   targets: boxes,
     //   duration: 1,

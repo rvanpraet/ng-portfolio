@@ -32,15 +32,13 @@ export class ContactFormComponent implements OnInit, AfterViewInit {
       {
         updateOn: 'blur'
       });
-
-    // this.contactForm.valueChanges.subscribe(changes => {
-    //   this.sendButton.nativeElement.disabled = !this.contactForm.valid;
-    // });
+    this.contactForm.valueChanges.subscribe(changes => {
+      this.sendButton.nativeElement.disabled = !this.contactForm.valid;
+    });
   }
 
   ngAfterViewInit(): void {
     this.contactFormEl = this.el.nativeElement;
-    this.sendButton.nativeElement.disabled = false;
   }
 
   handleModalClose(event: boolean): void {
@@ -48,22 +46,21 @@ export class ContactFormComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit(): void {
-    // if (this.contactForm.valid) {
-    //   this.sendButton.nativeElement.value = 'Sending…';
-    //   this.sendButton.nativeElement.disabled = true;
+    if (this.contactForm.valid) {
+      this.sendButton.nativeElement.value = 'Sending…';
+      this.sendButton.nativeElement.disabled = true;
 
-    //   const params = {
-    //     subject: this.contactForm.get('subject').value,
-    //     reply_to: this.contactForm.get('reply_to').value,
-    //     text: this.contactForm.get('text').value,
-    //   };
+      const params = {
+        subject: this.contactForm.get('subject').value,
+        reply_to: this.contactForm.get('reply_to').value,
+        text: this.contactForm.get('text').value,
+      };
 
-    //   this.service.post(params).subscribe(
-    //     response => this.onSuccess(),
-    //     error => this.onFail()
-    //   );
-    // }
-    this.onFail();
+      this.service.post(params).subscribe(
+        response => this.onSuccess(),
+        error => this.onFail()
+      );
+    }
   }
 
   onSuccess(): void {
