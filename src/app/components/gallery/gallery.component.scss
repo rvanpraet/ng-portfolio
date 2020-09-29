@@ -10,10 +10,11 @@
     position: relative;
 
     app-card {
-      display: inline-flex;   
+      display: inline-flex;
    
       img {
         width: 100%;
+        max-width: 100%;
         height: 100%;
       }
     }

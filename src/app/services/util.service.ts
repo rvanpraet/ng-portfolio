@@ -19,14 +19,9 @@ export class UtilService {
 
   public getCenterCoords(elem: HTMLElement): {x, y} {
     const rect = elem.getBoundingClientRect();
-    // const width = elem.offsetWidth;
-    // const height = elem.offsetHeight;
 
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-
-    console.log(Math.round(centerX));
-    console.log(Math.round(centerY));
 
     return { x: Math.round(centerX), y: Math.round(centerY)};
   }

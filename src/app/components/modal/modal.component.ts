@@ -26,7 +26,7 @@ export interface ModalContent {
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss']
+  styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges {
 
@@ -35,7 +35,8 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy, OnChang
   @ViewChild('modal_1') modal_1: TemplateRef<any>;
   @ViewChild('vc', {read: ViewContainerRef}) vc: ViewContainerRef;
   @ViewChild('modalDialog') modalDialog: ElementRef;
-
+  @ViewChild('modalMedia') modalMedia: ElementRef;
+  @ViewChild('modalContent') modalContent: ElementRef;
 
   @Input() animDuration = 0.5;
   @Input() content: ModalContent;
@@ -71,12 +72,14 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy, OnChang
     this.modalClose.complete();
   }
 
+
+  // TODO: Check how clickoutside can be caught
   // @HostListener('document:click', ['$event.target'])
   // public onClick(target): void {
-  //   if (!!this.modalDialog && this.show) {
-  //     const clickedInside = this.modalDialog.nativeElement.contains(target);
+  //   if ((!!this.modalMedia || !!this.modalContent) && this.show) {
+  //     const clickedInside = this.modalMedia.nativeElement.contains(target);
+  //     console.log(clickedInside);
   //     if (!clickedInside) {
-  //       console.log('clickie inside');
   //       this.closeDialog();
   //     }
   //   }
@@ -91,10 +94,13 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy, OnChang
       const content = modalEl.children[0].children.namedItem('modal-content');
       let animHeight;
       let animWidth;
-      console.log(image.children);
       if (image.children[0]) {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 992) {
           animWidth = 666;
+          animHeight = animWidth * 2 / 3;
+          this.gsapService.to(image, this.animDuration / 2, {height: animHeight, width: animWidth});
+        } else if (window.innerWidth > 768) {
+          animWidth = 600;
           animHeight = animWidth * 2 / 3;
           this.gsapService.to(image, this.animDuration / 2, {height: animHeight, width: animWidth});
         } else {
@@ -110,7 +116,6 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy, OnChang
   }
 
   closeDialog(): void {
-    // const modalEl = this.modal_1.elementRef.nativeElement.previousElementSibling;
     const image = this.modalEl.children[0].children.namedItem('modal-media');
     const content = this.modalEl.children[0].children.namedItem('modal-content');
     if (this.hasMedia) {
@@ -125,7 +130,6 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy, OnChang
     setTimeout(() => {
       this.vc.clear();
       document.body.removeChild(this.backdrop);
-      // document.body.removeChild(this.modalEl);
       this.show = false;
     }, this.animDuration * (this.hasMedia ? 2 : 1) * 1000);
   }
