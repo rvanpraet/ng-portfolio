@@ -75,5 +75,9 @@ export class AppModule {
     const el5 = createCustomElement(ScrollToTopComponent,
       { injector: this.injector });
     customElements.define('scroll-to-top', el5);
+
+    const el6 = createCustomElement(GalleryComponent,
+      { injector: this.injector });
+    customElements.define('portfolio-gallery', el6);
   }
 }
