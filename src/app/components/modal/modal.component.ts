@@ -72,6 +72,8 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy, OnChang
     this.modalClose.complete();
   }
 
+
+  // TODO: Check how clickoutside can be caught
   // @HostListener('document:click', ['$event.target'])
   // public onClick(target): void {
   //   if ((!!this.modalMedia || !!this.modalContent) && this.show) {
