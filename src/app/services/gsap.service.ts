@@ -1,7 +1,6 @@
 import { Flip } from 'gsap/Flip';
-import { Draggable } from 'gsap/Draggable';
 import { Injectable } from '@angular/core';
-import { gsap, Power2 } from 'gsap';
+import { gsap } from 'gsap';
 gsap.registerPlugin(Flip);
 
 @Injectable({
@@ -55,45 +54,49 @@ export class GsapService {
 
   // Smoothen layout of a container with items
   public filterLayout(boxes, duration, display, filter, event?): void {
-    // const options = {
-    //   targets: boxes,
-    //   duration: 1,
-    //   onEnter: elements => gsap.fromTo(elements, {opacity: 0, scale: 0}, {opacity: 1, scale: 1, duration: 1}),
-    //   onLeave: (elements, makeAbsolute) =>
-    //     gsap.to(
-    //       makeAbsolute(),
-    //       {
-    //         opacity: 0,
-    //         scale: 0,
-    //         duration: 1,
-    //         clearProps: 'all',
-    //         onComplete: () => elements.forEach(el => el.style.cssText = 'display: none')}
-    //     )
-    // };
+    const options = {
+      targets: boxes,
+      duration,
+      // ease: Power2.easeInOut,
+      onEnter: elements => gsap.fromTo(elements, {opacity: 0, scale: 0}, {opacity: 1, scale: 1, duration}),
+      onLeave: (elements, makeAbsolute) =>
+        gsap.to(
+          makeAbsolute(),
+          {
+            opacity: 0,
+            scale: 0,
+            duration,
+            clearProps: 'all',
+            onComplete: () => elements.forEach(el => el.style.cssText = 'display: none')}
+        )
+    };
 
-    // if (filter === 'all') {
-    //   // Show all
-    //   gsap.flip({
-    //     ...options,
-    //     change(): void{
-    //       gsap.set(boxes, { display });
-    //     }
-    //   });
-    // } else {
-    //   // Show only ones that match filter
-    //   gsap.flip({
-    //     ...options,
-    //     change(): void {
-    //       const split = this.groupBy(boxes, filter);
+    const context = this;
+    if (filter === 'all') {
+      // Show all
+      // @ts-ignore
+      gsap.flip({
+        ...options,
+        change(): void{
+          gsap.set(boxes, { display });
+        }
+      });
+    } else {
+      // Show only ones that match filter
+      // @ts-ignore
+      gsap.flip({
+        ...options,
+        change(): void {
+          const split = context.groupBy(boxes, filter);
 
-    //       // Hide ones not matching filter
-    //       gsap.set(split.false, { display: 'none' });
+          // Hide ones not matching filter
+          gsap.set(split.false, { display: 'none' });
 
-    //       // Show ones matching filter
-    //       gsap.set(split.true, { display });
-    //     }
-    //   });
-    // }
+          // Show ones matching filter
+          gsap.set(split.true, { display });
+        }
+      });
+    }
   }
 
   public groupBy(arr, className): { true, false } {

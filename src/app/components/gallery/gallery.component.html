@@ -4,19 +4,20 @@
   <div #grid class="grid">
     <app-card #card *ngFor="let item of galleryItems" class="all" [ngClass]="item.category" [flip]="true" [flipContentOpen]="cardOpen" (interact)="cardClicked($event, item)" >
       <img image [src]="item.image"/>
-      <h3 title>{{item.title}}</h3>
+      <h3 class="text-primary font-weight-bold" title>{{item.title}}</h3>
       <div subtitle>{{item.subtitle}}</div>
-      <div button>{{item.button.toUpperCase()}}</div>
+      <div class="text-primary" button>{{item.button.toUpperCase()}}</div>
     </app-card>
+    <app-modal *ngFor="let item of galleryItems"
+      [content]="item.modalContent"
+      [hasMedia]="true"
+      [show]="item.modalOpen"
+      [targetElem]="targetElem"
+      (modalClose)="handleModalClosed(item)">
+        <img *ngIf="item.modalContent.imageUrl" media [src]="item.image"/>
+        <iframe *ngIf="item.modalContent.iframeSrc" media width="560" height="315" [src]="item.modalContent.iframeSrc | safe : 'resourceUrl'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </app-modal>
   </div>
 </div>
 
-<app-modal *ngFor="let item of galleryItems"
-  [content]="item.modalContent"
-  [hasMedia]="true"
-  [show]="item.modalOpen"
-  [targetElem]="targetElem"
-  (modalClose)="handleModalClosed(item)">
-    <img *ngIf="item.modalContent.imageUrl" media [src]="item.image"/>
-    <iframe *ngIf="item.modalContent.iframeSrc" media width="560" height="315" [src]="item.modalContent.iframeSrc | safe : 'resourceUrl'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</app-modal>
+
