@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Input, ViewChildren, ViewChild, Renderer2, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, ViewChildren, ViewChild, Renderer2, HostListener, Output, EventEmitter, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-gallery-filter',
@@ -18,7 +18,7 @@ export class GalleryFilterComponent implements OnInit, AfterViewInit {
   @ViewChild('filterWrap') filterWrap;
   @ViewChild('floatRow') floatRow;
 
-  constructor(private renderer: Renderer2) { }
+  constructor() {}
 
   ngOnInit(): void {
   }
@@ -35,7 +35,7 @@ export class GalleryFilterComponent implements OnInit, AfterViewInit {
   }
 
   resetFilter(): void {
-    const allFilter = this.filters.toArray().find(element => element.nativeElement.outerText === 'ALL');
+    const allFilter = this.filters.toArray().find((element: ElementRef ) => element.nativeElement.innerHTML === 'ALL');
     allFilter.nativeElement.click();
   }
 
@@ -48,8 +48,7 @@ export class GalleryFilterComponent implements OnInit, AfterViewInit {
         this.activeLeft = event.target.offsetLeft;
       }
     });
-
-    this.filter.next(event.target.outerText);
+    this.filter.next(event.target.innerHTML);
   }
 
   stretchFloatRow(): void {
