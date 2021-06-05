@@ -10,23 +10,27 @@ export class FrontEndComponent implements OnInit {
   skills = [
     {
       name: 'HTML',
+      percentile: 90
+    },
+    {
+      name: 'JavaScript',
+      percentile: 85
+    },
+    {
+      name: 'SCSS',
+      percentile: 80
+    },
+    {
+      name: 'React',
       percentile: 75
     },
     {
-      name: '(S)CSS',
+      name: 'TypeScript',
       percentile: 75
     },
     {
       name: 'Angular',
-      percentile: 75
-    },
-    {
-      name: 'JavaScript',
       percentile: 70
-    },
-    {
-      name: 'jQuery',
-      percentile: 55
     },
     {
       name: 'Jest',

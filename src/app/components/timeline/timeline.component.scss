@@ -1,32 +1,50 @@
-.timeline-container {
-  width: 100%;
+.color-secondary {
+  background-color: #fffbf0;
 }
 
-.year-section{
+.year-section {
   color: #616161;
 
-  a{
-    font-weight: 700;
-    color: white;
+  a {
+    font-weight: 500;
+    color: #00a1a7;
   }
-  .year{
+
+  .year {
     color: #444964;
     font-weight: 400;
   }
-	.big{
+
+  .title {
     font-size: larger;
     color: #616161;
-    font-weight: 100;
-    margin-bottom: .5em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
   }
-	.aside{
+
+  .role {
+    font-size: large;
+    color: #616161;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 0.5em;
+  }
+
+  .role {
+  }
+
+  .aside {
     font-size: smaller;
     border-left: 2px solid #04c2c9;
     padding-left: 10px;
-    padding-bottom: 20px;
+    // padding-bottom: 20px;
     font-weight: 300;
-	}
-  ul{
+  }
+  ul {
     list-style: circle;
+
+    li {
+      overflow-wrap: break-word;
+    }
   }
 }

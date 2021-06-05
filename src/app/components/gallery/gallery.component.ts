@@ -41,6 +41,21 @@ export class GalleryComponent implements OnInit, AfterViewInit {
       modalOpen: false
     },
     {
+      category: ['development'],
+      image: 'http://workwithreinald.com/images/Thuisleefgids.jpg',
+      title: 'Thuisleefgids',
+      subtitle: 'React Apps',
+      button: 'Learn More',
+      modalContent: {
+        imageUrl: 'http://workwithreinald.com/images/Thuisleefgids.jpg',
+        title: 'Front-End Developer',
+        message: `<p>At Thuisleefgids, I'm working on the main proposition 'Thuisleefwijzer', a platform which links products from suppliers with an information database from health professionals to give better guidance to those giving- and in need of medical care.</p>
+        <p>Have a look at the open domain application:</p>
+          <p><a href="https://advies.thuisleefgids.nl/" target="_blank">Thuisleefwijzer</a></p>`
+      },
+      modalOpen: false
+    },
+    {
       category: ['music'],
       image: 'http://workwithreinald.com/images/30_days_01.jpg',
       title: '30 Days of Jam',

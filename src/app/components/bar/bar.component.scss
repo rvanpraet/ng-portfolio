@@ -12,6 +12,7 @@
 .bar {
   align-items: flex-end;
   background-color: #eee;
+  border-radius: 4px;
   color: #666;
   height: 28px;
   margin: 0 0 15px 0;
@@ -26,7 +27,6 @@
     width: 0 !important;
   }
 
-
   .fill {
     left: 0;
     position: absolute;
@@ -36,11 +36,17 @@
     padding: 0;
   }
 
+  .score {
+    z-index: 3;
+    font-style: italic;
+  }
+
   .tag {
     // left: 0;
     // position: absolute;
     // top: 0;
     background-color: #04c2c9;
+    border-radius: 4px 0 0 4px;
     color: #fff;
     height: 100%;
     width: 110px;

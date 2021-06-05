@@ -3,7 +3,6 @@
   white-space: nowrap;
 
   .filter {
-
     cursor: pointer;
     font-size: 8px;
     font-weight: 400;
@@ -23,19 +22,18 @@
   }
 
   .float-bar {
-
     display: block;
     bottom: 0;
     position: absolute;
     top: 0;
     background: #e31b6d;
-    border-radius: 1px;
+    border-radius: 4px;
     height: 30px;
     margin: auto 0;
     overflow: hidden;
     position: absolute;
     transition: all 0.5s ease-in-out;
-  
+
     .float-row {
       align-items: center;
       display: flex;
@@ -46,8 +44,7 @@
       top: 0;
       margin: auto 0;
       transition: left 0.5s ease-in-out;
-  
-  
+
       .filter {
         color: white;
       }
