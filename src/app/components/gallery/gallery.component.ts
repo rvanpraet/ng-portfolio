@@ -34,9 +34,9 @@ export class GalleryComponent implements OnInit, AfterViewInit {
       modalContent: {
         imageUrl: 'http://workwithreinald.com/images/vattenfall_1.jpg',
         title: 'Front-End Developer',
-        message: `<p>At Vattenfall I worked on the login environment and helped rebrand this from Nuon to Vattenfall. Angular app built with custom web components.</p>
-        <p>Are you or a colleague client at Vattenfall? Login to view my work:</p>
-          <p><a href="http://www.vattenfall.nl/service/mijn-vattenfall" target="_blank">Mijn Vattenfall</a></p>`
+        message: `<p class="modal-content">At Vattenfall I worked on the login environment and helped rebrand this from Nuon to Vattenfall. Angular app built with custom web components.</p>
+        <p class="modal-content">Are you or a colleague client at Vattenfall? Login to view my work:</p>
+          <p><a href="http://www.vattenfall.nl/service/mijn-vattenfall" target="_blank" class="text-primary">Mijn Vattenfall</a></p>`
       },
       modalOpen: false
     },
@@ -49,9 +49,9 @@ export class GalleryComponent implements OnInit, AfterViewInit {
       modalContent: {
         imageUrl: 'http://workwithreinald.com/images/Thuisleefgids.jpg',
         title: 'Front-End Developer',
-        message: `<p>At Thuisleefgids, I'm working on the main proposition 'Thuisleefwijzer', a platform which links products from suppliers with an information database from health professionals to give better guidance to those giving- and in need of medical care.</p>
-        <p>Have a look at the open domain application:</p>
-          <p><a href="https://advies.thuisleefgids.nl/" target="_blank">Thuisleefwijzer</a></p>`
+        message: `<p class="modal-content">At Thuisleefgids, I'm working on the main proposition 'Thuisleefwijzer', a platform which links products from suppliers with an information database from health professionals to give better guidance to those giving- and in need of medical care.</p>
+        <p class="modal-content">Have a look at the open domain application:</p>
+          <p class="text-primary"><a href="https://advies.thuisleefgids.nl/" target="_blank" class="text-primary">Thuisleefwijzer</a></p>`
       },
       modalOpen: false
     },
@@ -64,9 +64,9 @@ export class GalleryComponent implements OnInit, AfterViewInit {
       modalContent: {
         iframeSrc: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/681622158&color=%2300a1a7&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
         title: '30 Days of Jam',
-        message: `<p>Thirty days of Jam is about creating every day for a whole month, during the dark month of January.</p>
-        <p>Every design has a piece of music and vice versa. Some of the music has been used in different video's.</p>
-        <p class="modal-mobile-xs"><a href="https://soundcloud.com/sasemoi-30daysofjam/sets/sasemoi-30-days-of-jam" target="_blank">Listen on Soundcloud</a></p>`
+        message: `<p class="modal-content">Thirty days of Jam is about creating every day for a whole month, during the dark month of January.</p>
+        <p class="modal-content">Every design has a piece of music and vice versa. Some of the music has been used in different video's.</p>
+        <p class="modal-mobile-xs"><a class="text-primary" href="https://soundcloud.com/sasemoi-30daysofjam/sets/sasemoi-30-days-of-jam" target="_blank">Listen on Soundcloud</a></p>`
       },
       modalOpen: false
     },
@@ -79,8 +79,8 @@ export class GalleryComponent implements OnInit, AfterViewInit {
       modalContent: {
         iframeSrc: 'https://www.youtube.com/embed/YbmDOHVLHC4',
         title: 'Buddha To Buddha',
-        message: `<p>Together with Vice I've created the music for Buddha To Buddha's campaign 'Dented', indroducing a new line of jewelry. The track starts out with an eerie vibe that turns energetic:</p>
-        <p class="modal-mobile-xs"><a href="https://www.youtube.com/watch?v=YbmDOHVLHC4" target="_blank">Watch on Youtube</a></p>`
+        message: `<p class="modal-content">Together with Vice I've created the music for Buddha To Buddha's campaign 'Dented', indroducing a new line of jewelry. The track starts out with an eerie vibe that turns energetic:</p>
+        <p class="modal-mobile-xs text-primary"><a class="text-primary" href="https://www.youtube.com/watch?v=YbmDOHVLHC4" target="_blank">Watch on Youtube</a></p>`
       },
       modalOpen: false
     },
@@ -93,9 +93,9 @@ export class GalleryComponent implements OnInit, AfterViewInit {
       modalContent: {
         imageUrl: 'http://workwithreinald.com/images/delver_1.jpg',
         title: 'Delver Music',
-        message: `<p>Delver Music is an independent music imprint ran by me. It features releases from myself and close friends and looks to catch an ambient yet danceable vibe.</p>
-                  <p>Minimalistic website in line with release artworks.</p>
-                  <p><a href="http://delver-music.com" target="_blank">Visit website</a></p>`
+        message: `<p class="modal-content">Delver Music is an independent music imprint ran by me. It features releases from myself and close friends and looks to catch an ambient yet danceable vibe.</p>
+                  <p class="modal-content">Minimalistic website in line with release artworks.</p>
+                  <p><a href="http://delver-music.com" target="_blank" class="text-primary">Visit website</a></p>`
       },
       modalOpen: false
     },
